@@ -1,0 +1,28 @@
+{
+  "name": "crayfish_lambda",
+  "version": "1.0.0",
+  "description": "graphql for crayfish",
+  "main": "index.js",
+  "repository": "https://entaline@bitbucket.org/spade6/crayfish_lambda.git",
+  "author": "<entaline@naver.com>",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server-lambda": "^2.9.16",
+    "aws-sdk": "^2.612.0",
+    "graphql": "^14.6.0"
+  },
+  "scripts": {
+    "start": "serverless offline start"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "serverless-offline": "^6.0.0-alpha.65",
+    "serverless-webpack": "^5.3.1",
+    "webpack": "^4.41.5",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
