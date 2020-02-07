@@ -1,3 +1,13 @@
 {
-  "presets": ["env", "stage-3"]
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "node": "12.14"
+        }
+      }
+    ],
+    "stage-3"
+  ]
 }

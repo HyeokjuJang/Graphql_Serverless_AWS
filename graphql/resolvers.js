@@ -1,39 +1,12 @@
-const people = [
-  {
-    id: 1,
-    name: "a",
-    age: 19,
-    gender: "male"
-  },
-  {
-    id: 2,
-    name: "b",
-    age: -10,
-    gender: "female"
-  },
-  {
-    id: 3,
-    name: "c",
-    age: 30,
-    gender: "male"
-  },
-  {
-    id: 4,
-    name: "d",
-    age: 4000,
-    gender: "female"
-  }
-];
-
-function getById(id) {
-  const filteredPeople = people.filter(person => person.id === id);
-  return filteredPeople[0];
-}
+import { UserInputError } from "apollo-server-lambda";
+import { getMovie, createMovie } from "./db";
 
 const resolvers = {
   Query: {
-    people: () => people,
-    person: (_, { id }) => getById(id)
+    movie: async (_, { year, title }) => await getMovie(year, title)
+  },
+  Mutation: {
+    createMovie: async (_, { year, title, info }) => await createMovie(year, title, info)
   }
 };
 

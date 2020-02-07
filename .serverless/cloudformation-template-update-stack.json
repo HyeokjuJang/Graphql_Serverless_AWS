@@ -159,7 +159,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/crayfish-apollo-lambda/dev/1580978176003-2020-02-06T08:36:16.003Z/crayfish-apollo-lambda.zip"
+          "S3Key": "serverless/crayfish-apollo-lambda/dev/1581075944628-2020-02-07T11:45:44.628Z/crayfish-apollo-lambda.zip"
         },
         "FunctionName": "crayfish-apollo-lambda-dev-graphql",
         "Handler": "index.graphqlHandler",
@@ -178,14 +178,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "GraphqlLambdaVersion6RDQlya2KqFQJMkER8JFQzIoeUuQduxCFtqeHmdhZo": {
+    "GraphqlLambdaVersionU4A1J96L2TmxAKXUH0qNb0wOdbXA4SZv2fvYv5AxY": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GraphqlLambdaFunction"
         },
-        "CodeSha256": "jA//1LrvIPAWnhwN4vBS4HzfMwzvLdb7gK1ILrtNMiA="
+        "CodeSha256": "JioD/uYXj+v3b1HoCfK3x/IS0Der1KASwTCa9JZpLsU="
       }
     },
     "ApiGatewayRestApi": {
@@ -346,7 +346,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1580978159629": {
+    "ApiGatewayDeployment1581075927182": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -396,6 +396,36 @@
           ]
         }
       }
+    },
+    "NotesTable": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "TableName": "Movies",
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "year",
+            "AttributeType": "N"
+          },
+          {
+            "AttributeName": "title",
+            "AttributeType": "S"
+          }
+        ],
+        "KeySchema": [
+          {
+            "AttributeName": "year",
+            "KeyType": "HASH"
+          },
+          {
+            "AttributeName": "title",
+            "KeyType": "RANGE"
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 1,
+          "WriteCapacityUnits": 1
+        }
+      }
     }
   },
   "Outputs": {
@@ -407,7 +437,7 @@
     "GraphqlLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GraphqlLambdaVersion6RDQlya2KqFQJMkER8JFQzIoeUuQduxCFtqeHmdhZo"
+        "Ref": "GraphqlLambdaVersionU4A1J96L2TmxAKXUH0qNb0wOdbXA4SZv2fvYv5AxY"
       }
     },
     "ServiceEndpoint": {
