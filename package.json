@@ -9,6 +9,7 @@
   "dependencies": {
     "apollo-server-lambda": "^2.9.16",
     "aws-sdk": "^2.612.0",
+    "braces": "^3.0.2",
     "graphql": "^14.6.0"
   },
   "scripts": {
