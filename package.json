@@ -7,7 +7,7 @@
   "author": "<entaline@naver.com>",
   "license": "MIT",
   "dependencies": {
-    "apollo-server-lambda": "^2.9.16",
+    "apollo-server-lambda": "^2.14.2",
     "aws-sdk": "^2.612.0",
     "graphql": "^14.6.0"
   },
